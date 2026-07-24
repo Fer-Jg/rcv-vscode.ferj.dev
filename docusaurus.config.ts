@@ -25,6 +25,9 @@ const config: Config = {
   organizationName: 'Fer-Jg', // Usually your GitHub org/user name.
   projectName: 'rcv-vscode.ferj.dev', // Usually your repo name.
 
+  // Manually added configs
+  trailingSlash: false,
+
   onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
