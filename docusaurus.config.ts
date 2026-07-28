@@ -91,6 +91,11 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
+        {
+          label: 'Requirements',
+          position: 'left',
+          href: '/docs/tutorial-setup/requirements'
+        },
         // {to: '/blog', label: 'Blog', position: 'left'},
         { href: 'https://rcv-vscode.ferj.dev/discord',
           label: 'Discord',
