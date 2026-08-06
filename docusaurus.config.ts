@@ -149,7 +149,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Fer Gil & Co.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="https://mexcodex.com" target="_blank">MexCodex</a>`,
     },
     prism: {
       theme: prismThemes.github,
