@@ -1,0 +1,83 @@
+---
+sidebar_position: 2
+---
+
+# Installation
+
+Learn how to install the RCV-VSCode extension!
+
+:::info[Future Feature]
+
+There will be an automatic installer in the coming updates that will automatically install everything (except python and extensions) for you :)
+
+:::
+
+## RCV-VSCode installation
+
+To install the extension, just look for "RCV-VSCode" in your VSCode extensions and install it, like any other extension :D
+
+## Workspace preparation
+
+Just create a new folder in your system and open it as a whole workspace in Visual Studio Code.
+
+:::danger
+
+RCV-VSCode is intended to be used as a whole workspace extension, so it does not fully support multiple workspaces/folders in the same VSCode instance.
+
+If you choose to use multiple workspaces/folders in the same instance that you use RCV-VSCode, we cannot help that much directly, but feel free to report any issues and we will try to fix them ASAP.
+
+:::
+
+
+## RenderCV installation
+
+:::info[future automation]
+
+This will be automated in coming updates
+
+:::
+
+### RenderCV CLI
+
+You can have a *semi*-automatic experience by following the [virtual environment setup tip](#venv-tip)!
+
+If you want to manually install the CLI, we would recommend setting up a [virtual environment](#venv) first and coming back to this section afterwads.
+
+Once you have python (and optionally, a virtual environment) installed, you just have to follow the RenderCV CLI setup tutorial at the bottom of [their repository](https://github.com/rendercv/rendercv#get-started), which is basically just the following command:
+
+:::note
+
+If you use a Virtual Environment, you might need to activate it before executing the command!
+
+:::
+
+The command to install the RenderCV CLI:
+
+```py
+pip install "rendercv[full]"
+```
+
+After you have executed that command successfully, you are all done!
+
+### Virtual Environment {/* #venv */}
+
+It is recommended to use a Virtual Environment (venv) to work with RCV-VSCode, but this is totally optional and there are at least 2 ways of doing so:
+
+- Native python venv
+- UV installation
+
+<div id="venv-tip"></div>
+
+:::tip
+
+(This is a work in progress)
+
+Please be patient with us, semi-automatic and fully-automatic venv/requirement installations will come soon!
+
+:::
+
+{/* :::tip
+
+We have made a repository that includes the files that will let you install everything with a single command, despite of the method you choose to use (either of the previously mentioned), you can find the files in the [RCV-VSCode Requirements](https://github.com/Fer-Jg/rcv-vscode-requirements) repository along with the corresponding instructions for each type of installation.
+
+::: */}
