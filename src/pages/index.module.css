@@ -1,4 +1,7 @@
 .heroBanner {
+  --hero-x: 50%;
+  --hero-y: 42%;
+  --hero-hue: 205;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -6,26 +9,57 @@
   text-align: center;
   color: var(--rcv-text);
   background:
-    radial-gradient(circle at 20% 15%, rgb(0 103 184 / 15%), transparent 32rem),
-    radial-gradient(circle at 85% 80%, rgb(121 87 213 / 12%), transparent 28rem),
+    radial-gradient(circle at 20% 15%, rgb(0 103 184 / 12%), transparent 32rem),
+    radial-gradient(circle at 85% 80%, rgb(121 87 213 / 10%), transparent 28rem),
     linear-gradient(180deg, var(--rcv-surface-raised), var(--rcv-surface-muted));
   border-bottom: 1px solid var(--rcv-border);
 }
 
-.heroBanner::before {
+.heroBanner::before,
+.heroBanner::after {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
   content: '';
-  opacity: 0.32;
+  pointer-events: none;
+}
+
+.heroBanner::before {
+  opacity: 0.62;
   background-image:
+    radial-gradient(
+      circle at var(--hero-x) var(--hero-y),
+      hsl(var(--hero-hue) 92% 58% / 0.28),
+      transparent 18rem
+    ),
+    linear-gradient(hsl(var(--hero-hue) 84% 54% / 0.22) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(calc(var(--hero-hue) + 42) 82% 60% / 0.2) 1px, transparent 1px),
     linear-gradient(var(--rcv-border) 1px, transparent 1px),
     linear-gradient(90deg, var(--rcv-border) 1px, transparent 1px);
-  background-size: 36px 36px;
-  mask-image: linear-gradient(to bottom, black, transparent 85%);
+  background-size: 100% 100%, 36px 36px, 36px 36px, 36px 36px, 36px 36px;
+  mask-image:
+    radial-gradient(circle at var(--hero-x) var(--hero-y), black, transparent 34rem),
+    linear-gradient(to bottom, black, transparent 88%);
+  mask-composite: intersect;
+  transition: opacity 180ms ease;
+}
+
+.heroBanner::after {
+  opacity: 0.82;
+  background:
+    radial-gradient(
+      circle at var(--hero-x) var(--hero-y),
+      hsl(var(--hero-hue) 92% 62% / 0.24),
+      hsl(calc(var(--hero-hue) + 48) 82% 58% / 0.12) 16rem,
+      transparent 34rem
+    );
+  mix-blend-mode: multiply;
+  transition: opacity 180ms ease;
 }
 
 .heroBanner :global(.container) {
+  position: relative;
+  z-index: 1;
   max-width: 900px;
 }
 
@@ -71,6 +105,13 @@
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 4.5rem 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroBanner::before,
+  .heroBanner::after {
+    transition: none;
   }
 }
 

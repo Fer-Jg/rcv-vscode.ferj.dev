@@ -1,4 +1,4 @@
-import type {ReactNode} from 'react';
+import type {CSSProperties, PointerEvent, ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -10,8 +10,35 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const defaultHeroStyle = {
+    '--hero-x': '50%',
+    '--hero-y': '42%',
+    '--hero-hue': '205',
+  } as CSSProperties;
+
+  function handlePointerMove(event: PointerEvent<HTMLElement>) {
+    const bounds = event.currentTarget.getBoundingClientRect();
+    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
+    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
+    const hue = 185 + x * 0.65;
+
+    event.currentTarget.style.setProperty('--hero-x', `${x.toFixed(2)}%`);
+    event.currentTarget.style.setProperty('--hero-y', `${y.toFixed(2)}%`);
+    event.currentTarget.style.setProperty('--hero-hue', hue.toFixed(0));
+  }
+
+  function handlePointerLeave(event: PointerEvent<HTMLElement>) {
+    event.currentTarget.style.setProperty('--hero-x', '50%');
+    event.currentTarget.style.setProperty('--hero-y', '42%');
+    event.currentTarget.style.setProperty('--hero-hue', '205');
+  }
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header
+      className={clsx('hero hero--primary', styles.heroBanner)}
+      style={defaultHeroStyle}
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
