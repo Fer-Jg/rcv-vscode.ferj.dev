@@ -1,0 +1,49 @@
+---
+sidebar_position: 3
+---
+
+# Renderizado automático
+
+El renderizado automático es la función principal de RCV-VSCode.
+
+Esta función ejecuta automáticamente el comando necesario de la CLI de RenderCV con la sintaxis correcta para generar un nuevo PDF, y después abre el PDF generado en un panel lateral.
+
+:::info[EN PROCESO]
+
+Esta función todavía no está completa. Consulta la información de abajo para conocer más detalles.
+
+La implementación actual depende por completo de otros proveedores de PDF, lo cual limita el rendimiento de la extensión. Esto cambiará en el futuro.
+
+:::
+
+## Modos disponibles
+
+### on-click
+
+Solo activa el renderizado del PDF cuando haces clic en el CV dentro de la barra lateral de RCV-VSCode. Básicamente, desactiva la funcionalidad automática y la vuelve manual.
+
+### on-save
+
+Activa el renderizado cada vez que guardas tu archivo YAML, actualizando automáticamente el PDF mostrado.
+
+### auto
+
+Activa automáticamente el renderizado cada vez que haces cambios en tu archivo YAML, usando tu configuración `Auto Render Cooldown` para decidir cuánto tiempo esperar entre cada cambio antes de ejecutar el renderizado.
+
+:::warning[En proceso]
+
+Esta función está deshabilitada temporalmente porque hacía demasiado difícil editar archivos YAML mientras veías el PDF. Se corregirá en una actualización futura.
+
+:::
+
+## Cómo cambiar los modos
+
+Abre la barra lateral de RCV-VSCode y haz clic en el engrane de la esquina superior derecha. Esto abrirá automáticamente la configuración de VSCode para la extensión; ahí puedes cambiar el modo de renderizado automático al que prefieras.
+
+<details>
+
+<summary>GIF para cambiar el renderizado automático</summary>
+
+![GIF para cambiar el renderizado automático](./media/render.gif)
+
+</details>

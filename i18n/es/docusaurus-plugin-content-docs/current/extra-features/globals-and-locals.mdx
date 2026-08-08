@@ -1,0 +1,30 @@
+---
+sidebar_position: 4
+---
+
+# Configuraciones locales y globales
+
+{/* TODO: Cambiar todas las referencias a "configuración" */}
+
+:::info[EN PROCESO]
+
+Esta publicación está en proceso, así que te pedimos paciencia ;)
+
+:::
+
+Las configuraciones locales y globales son lo que RCV-VSCode usa para construir los CVs en tiempo real.
+
+- Las configuraciones globales se reutilizan en todos los proyectos que no tienen una configuración local que las reemplace.
+- Las configuraciones locales reemplazan las configuraciones globales, permitiendo una configuración diferente para un CV específico.
+
+Para **hacer que un CV tenga una configuración local**, tendrás que copiar la configuración que quieras desde la carpeta `./globals`, que RCV-VSCode genera automáticamente _después_ de crear tu primer CV.
+
+Para **hacer que un CV use configuraciones globales**, solo borra la configuración local ubicada en `./yamls/YourCVName/` y vuelve a abrir el CV. Esto lo recargará con la configuración global.
+
+Para **cambiar configuraciones globales**, modifica los archivos YAML directamente o copia y pega una configuración local desde `./yamls/YourCVName/` hacia la carpeta `./globals`.
+
+:::info
+
+En el futuro podrás administrar configuraciones directamente desde la interfaz.
+
+:::
