@@ -15,6 +15,24 @@
       "skipFiles": [
         "<node_internals>/**"
       ]
+    },
+    {
+      "name": "Docusaurus Dev Server (Spanish)",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start",
+        "--",
+        "--locale",
+        "es"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
     }
   ]
 }
