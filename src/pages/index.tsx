@@ -21,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            RCV-VSCode tutorial - 5min ⏱️
+            RCV-VSCode tutorial - 7min ⏱️
           </Link>
         </div>
       </div>
