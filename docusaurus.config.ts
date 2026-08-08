@@ -82,7 +82,7 @@ const config: Config = {
       title: 'RCV - VSC',
       logo: {
         alt: 'RenderCV - VSCode',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
